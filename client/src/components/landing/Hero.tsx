@@ -2,6 +2,12 @@ import { motion } from "framer-motion";
 import { Command } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
+const aiQueries = [
+  "Who is most affected by the new tax announced yesterday on Stock purchases?",
+  "I'm traveling to San Diego - who can I meet for coffee that might convert to a paying customer?",
+  "List all enterprise clients who haven't upgraded to our latest security package"
+];
+
 export function Hero() {
   return (
     <section className="min-h-screen pt-16 overflow-hidden">
@@ -28,23 +34,20 @@ export function Hero() {
             className="mt-12"
           >
             <Card className="p-6 bg-background/50 backdrop-blur-sm border-2 border-muted">
-              <div className="flex items-center gap-2 p-2 bg-muted rounded-md">
-                <Command className="w-5 h-5 text-primary" />
-                <span className="text-muted-foreground">
-                  Show me all customers who purchased in the last 30 days
-                </span>
-              </div>
-              <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
-                {[1, 2, 3].map((i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: 0.4 + i * 0.1 }}
-                    className="h-24 bg-muted rounded-lg animate-pulse"
-                  />
-                ))}
-              </div>
+              {aiQueries.map((query, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 + i * 0.2 }}
+                  className="flex items-center gap-2 p-2 bg-muted rounded-md mb-3 last:mb-0"
+                >
+                  <Command className="w-5 h-5 text-primary" />
+                  <span className="text-muted-foreground text-left">
+                    {query}
+                  </span>
+                </motion.div>
+              ))}
             </Card>
           </motion.div>
         </div>

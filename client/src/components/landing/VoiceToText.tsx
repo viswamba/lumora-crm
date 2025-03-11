@@ -2,6 +2,12 @@ import { motion } from "framer-motion";
 import { Mic, Waves } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
+const understandingExamples = [
+  "Schedule a follow-up meeting with John from Acme Corp next Tuesday at 2 PM and update his contact preferences to email only.",
+  "After the call with Sarah from TechStart, she's interested in the enterprise plan. Set a reminder to send the proposal by Friday.",
+  "During lunch with Michael, he mentioned expanding to Asia. Tag him as potential expansion opportunity and schedule quarterly check-ins."
+];
+
 export function VoiceToText() {
   return (
     <section id="voice" className="py-20">
@@ -47,7 +53,7 @@ export function VoiceToText() {
               </div>
 
               <div className="space-y-4">
-                {[1, 2, 3].map((i) => (
+                {understandingExamples.map((example, i) => (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, x: -20 }}
@@ -57,21 +63,10 @@ export function VoiceToText() {
                     className="flex items-center gap-2"
                   >
                     <Waves className="w-4 h-4 text-primary" />
-                    <div className="h-2 bg-muted rounded-full flex-1" />
+                    <p className="text-sm text-muted-foreground flex-1">{example}</p>
                   </motion.div>
                 ))}
               </div>
-
-              <motion.div 
-                className="mt-6 p-4 bg-muted/50 rounded-lg"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-              >
-                <p className="text-sm text-muted-foreground">
-                  <span className="text-primary font-semibold">Understanding:</span> "Schedule a follow-up meeting with John from Acme Corp next Tuesday at 2 PM and update his contact preferences to email only."
-                </p>
-              </motion.div>
             </Card>
           </motion.div>
         </div>
