@@ -61,6 +61,17 @@ export function VoiceToText() {
                   </motion.div>
                 ))}
               </div>
+
+              <motion.div 
+                className="mt-6 p-4 bg-muted/50 rounded-lg"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+              >
+                <p className="text-sm text-muted-foreground">
+                  <span className="text-primary font-semibold">Understanding:</span> "Schedule a follow-up meeting with John from Acme Corp next Tuesday at 2 PM and update his contact preferences to email only."
+                </p>
+              </motion.div>
             </Card>
           </motion.div>
         </div>
