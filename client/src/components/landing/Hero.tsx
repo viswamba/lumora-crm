@@ -10,8 +10,8 @@ const aiQueries = [
 
 export function Hero() {
   return (
-    <section className="min-h-screen pt-16 overflow-hidden">
-      <div className="container mx-auto px-4 py-20">
+    <section className="min-h-screen pt-16 pb-8 overflow-hidden">
+      <div className="container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

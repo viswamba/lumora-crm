@@ -10,9 +10,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <WaitlistForm />
         <Features />
         <VoiceToText />
-        <WaitlistForm />
       </main>
     </div>
   );
