@@ -10,8 +10,8 @@ const aiQueries = [
 
 export function Hero() {
   return (
-    <section className="min-h-screen pt-16 pb-8 overflow-hidden">
-      <div className="container mx-auto px-4 py-12">
+    <section className="min-h-[85vh] pt-16 pb-4 overflow-hidden">
+      <div className="container mx-auto px-4 py-8">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -31,16 +31,16 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-12"
+            className="mt-8"
           >
-            <Card className="p-6 bg-background/50 backdrop-blur-sm border-2 border-muted">
+            <Card className="p-4 bg-background/50 backdrop-blur-sm border-2 border-muted">
               {aiQueries.map((query, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + i * 0.2 }}
-                  className="flex items-center gap-2 p-2 bg-muted rounded-md mb-3 last:mb-0"
+                  className="flex items-center gap-2 p-2 bg-muted rounded-md mb-2 last:mb-0"
                 >
                   <Command className="w-5 h-5 text-primary" />
                   <span className="text-muted-foreground text-left">
